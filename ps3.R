@@ -29,6 +29,14 @@ observedFreq <- c(710, 175, 74, 23, 10, 4, 2, 1, 1)
 
 dataModel <- data.frame(Y, observedFreq)
 
+model <- glm(dataModel , family = poisson(link = "log"))
+
+print(model)
+
+summaryModel <- summary(model)
+
+print(summaryModel)
+
 startPoint <- 0.5
 
 s <- TRUE
@@ -53,4 +61,6 @@ while (s == TRUE) {
 
 print(newTheta)
 
+
+- g(newTheta)
 
